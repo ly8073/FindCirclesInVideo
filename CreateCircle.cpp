@@ -3,7 +3,7 @@
 #include<string>
 using namespace std;
 using namespace cv;
-//Éú³ÉÔ²»·Í¼
+//ç”Ÿæˆåœ†ç¯å›¾
 void CircleCreate(string file_name)
 {
 	Mat paper = 255 * Mat::ones(1080, 1920, CV_8UC1);
@@ -25,7 +25,7 @@ void CircleCreate(string file_name)
 	destroyWindow("paper");
 	*/
 }
-//Ñ°ÕÒÔ²ĞÄÓë°ë¾¶
+//å¯»æ‰¾åœ†å¿ƒä¸åŠå¾„
 void FindCircle(Mat& frame)
 {
 	Mat gray;
@@ -36,13 +36,13 @@ void FindCircle(Mat& frame)
 	{
 		Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
 		int radius = cvRound(circles[i][2]);
-		//»æÖÆÔ²ĞÄ
+		//ç»˜åˆ¶åœ†å¿ƒ
 		circle(frame, center, 3, Scalar(0, 255, 0), -1, 8, 0);
-		//»æÖÆÔ²ÂÖÀª
+		//ç»˜åˆ¶åœ†è½®å»“
 		circle(frame, center, radius, Scalar(255, 50, 0), 3, 8, 0);
 	}
 }
-//´¦ÀíÊÓÆµ
+//å¤„ç†è§†é¢‘
 void DealVideo(string file_name)
 {
 	VideoCapture Video;
@@ -64,7 +64,7 @@ void DealVideo(string file_name)
 
 int main()
 {
-	//CircleCreate(".\\imgs\\circles.jpg");
-	DealVideo(".\\imgs\\video.mp4");
+	//CircleCreate(".\\circles.jpg");
+	DealVideo(".\\video.mp4");
 	return 0;
 }
